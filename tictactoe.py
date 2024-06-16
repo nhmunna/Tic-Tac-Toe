@@ -49,3 +49,11 @@ def isWinner(bo, le):
            (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
            (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
            (bo[9] == le and bo[5] == le and bo[1] == le) ) # Diagonal
+
+# Duplicating the Board Data
+def getBoardCopy(board):
+    # Make a copy of the board list and return it.
+    boardCopy = []
+    for i in board:
+        boardCopy.append(i)
+    return boardCopy
