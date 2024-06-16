@@ -62,3 +62,13 @@ def getBoardCopy(board):
 def isSpaceFree(board, move):
     # Return True if the passed move is free on the passed board.
     return board[move] == ' '
+
+# Letting the Player Enter a Move
+def getPlayerMove(board):
+    # Let the player enter their move.
+    move = ' '
+    while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
+        print('What is your next move? (1-9)')
+        move = input()
+    return int(move)
+    
