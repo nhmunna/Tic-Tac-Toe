@@ -33,3 +33,7 @@ def whoGoesFirst():
     else:
         return 'player'
     
+# Placing a Mark on the Board.
+def makeMove(board, letter, move):
+    board[move] = letter
+    
