@@ -57,3 +57,8 @@ def getBoardCopy(board):
     for i in board:
         boardCopy.append(i)
     return boardCopy
+
+# Checking Whether a Space on the Board is Free
+def isSpaceFree(board, move):
+    # Return True if the passed move is free on the passed board.
+    return board[move] == ' '
