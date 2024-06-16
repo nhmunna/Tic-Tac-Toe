@@ -24,3 +24,12 @@ def inputPlayerLetter():
         return ['X', 'O']
     else:
         return ['O', 'X']
+
+# Deciding Who Goes First
+def whoGoesFirst():
+    # Randomly choose which player goes first.
+    if random.randint(0,1) == 0:
+        return 'computer'
+    else:
+        return 'player'
+    
