@@ -84,4 +84,11 @@ def chooseRandomMoveFromList(board, movesList):
         return random.choice(possibleMoves)
     else:
         return None
-         
+
+# Creating the Computer's AI
+def getComputerMove(board, computerLetter):
+    # Given a board and the computer's letter, determine where to move and return that move.
+    if computerLetter == 'X':
+        playerLetter = 'O'
+    else:
+        playerLetter = 'X'     
