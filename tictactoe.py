@@ -1,6 +1,7 @@
 # Tic_Tac_Toe
 import random
 
+
 # Printing the Board on the Screen
 def drawBoard(board):
     # This function prints out the board that it was passed.
@@ -91,4 +92,31 @@ def getComputerMove(board, computerLetter):
     if computerLetter == 'X':
         playerLetter = 'O'
     else:
-        playerLetter = 'X'     
+        playerLetter = 'X'
+
+# Checking Whether the Computer Can Win in One Move
+    # Here is the algorithm for Tic-Tac-Toe AI:
+    # First, check if we can win in the next move.
+    for i in range(1, 10):
+        boardCopy = getBoardCopy(board)
+        if isSpaceFree(boardCopy, i):
+            makeMove(boardCopy, computerLetter, i)
+            if isWinner(boardCopy, computerLetter):
+                return i
+# Checking Whether the Player Can Win in One Move
+    for i in range(1, 10):
+        boardCopy = getBoardCopy(board)
+        if isSpaceFree(boardCopy, i):
+            makeMove(boardCopy, playerLetter, i)
+            if isWinner(boardCopy, playerLetter):
+                return i
+# Checking the Corner, Center, and Side Spaces
+    # Try to take one of the corners, if they are free.
+    move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
+    if move != None:
+        return None
+    # Try to take the center, if it is free.
+    if isSpaceFree(board, 5):
+        return 5
+    # Move on one of the sides.
+    return chooseRandomMoveFromList(board, [2, 4, 6, 8])
