@@ -49,7 +49,7 @@ def isWinner(bo, le):
            (bo[8] == le and bo[5] == le and bo[2] == le) or # Down the middle
            (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
            (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
-           (bo[9] == le and bo[5] == le and bo[1] == le) ) # Diagonal
+           (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
 
 # Duplicating the Board Data
 def getBoardCopy(board):
@@ -114,7 +114,7 @@ def getComputerMove(board, computerLetter):
     # Try to take one of the corners, if they are free.
     move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
     if move != None:
-        return None
+        return move
     # Try to take the center, if it is free.
     if isSpaceFree(board, 5):
         return 5
@@ -138,6 +138,7 @@ while True:
     turn = whoGoesFirst()
     print('The ' + turn + ' will go first.')
     gameIsPlaying = True
+    
     while gameIsPlaying:
         if turn == 'player':
             # Player's Turn
@@ -173,5 +174,5 @@ while True:
                 else:
                     turn = 'player'
     print('Do you want to play again? (yes or no)')
-    if not input.lower().startswith('y'):
+    if not input().lower().startswith('y'):
         break
