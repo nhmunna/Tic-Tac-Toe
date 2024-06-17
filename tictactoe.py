@@ -120,3 +120,12 @@ def getComputerMove(board, computerLetter):
         return 5
     # Move on one of the sides.
     return chooseRandomMoveFromList(board, [2, 4, 6, 8])
+
+# Checking Whether the Board is Full
+def isBoardFull(board):
+    # Return True if every space on the board has been taken. Otherwise, return False.
+    for i in range(1, 10):
+        if isSpaceFree(board, i):
+            return False
+    return True
+
